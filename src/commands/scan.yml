@@ -7,7 +7,7 @@ parameters:
   chkk-access-token:
     description: Chkk Authentication token
     type: string
-  enable-checks:
+  run-checks:
     description: List of checks to run
     default: "default"
     type: string
@@ -26,4 +26,4 @@ steps:
         export CHKK_ACCESS_TOKEN=<<parameters.chkk-access-token>>;
         curl -Lo chkk https://downloads.chkk.dev/v0.0.1/chkk-linux-amd64;
         chmod +x chkk;
-        ./chkk -f <<parameters.kubernetes-manifest>> -r <<parameters.enable-checks>> -s <<parameters.skip-checks>> <<parameters.args>>
+        ./chkk -f <<parameters.kubernetes-manifest>> -r <<parameters.run-checks>> -s <<parameters.skip-checks>> <<parameters.args>>
