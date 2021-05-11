@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  butterfly-orb: muneeb131/butterflyorb@dev:alpha
+  butterfly-orb: muneeb131/butterflyorb@1.0.0
 
 jobs:
   build:
