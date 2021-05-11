@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  circleci-orb: muneeb131/butterflyorb@dev:beta
+  butterfly-orb: muneeb131/butterflyorb@dev:alpha
 
 jobs:
   build:
@@ -9,6 +9,6 @@ jobs:
       - image: cimg/base:stable
     steps:
         - checkout
-        - circleci-orb/scan:
-            kubernetes-manifest: "kubernetes-manifest.yaml"
-            chkk-access-token: $CHKK_ACCESS_TOKEN
+        - butterfly-orb/scan:
+              kubernetes-manifest: "kubernetes-manifest.yaml"
+              chkk-access-token: $CHKK_ACCESS_TOKEN
