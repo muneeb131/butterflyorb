@@ -1,0 +1,29 @@
+description: >
+  This command runs Chkk to scan the manifest file specified as an input to the orb.
+parameters:
+  kubernetes-manifest:
+    description: The k8s manifest file to test
+    type: string
+  chkk-access-token:
+    description: Chkk Authentication token
+    type: string
+  enable-checks:
+    description: List of checks to run
+    default: "default"
+    type: string
+  skip-checks:
+    description: List of checks to skip
+    default: "default"
+    type: string
+  args:
+    description: Additional arguments to pass to Chkk
+    type: string
+
+steps:
+  - run:
+      name: Chkk manifest scan
+      command: >
+        export CHKK_ACCESS_TOKEN=<<parameters.chkk-access-token>>;
+        curl -Lo chkk https://downloads.chkk.dev/v0.0.1/chkk-linux-amd64;
+        chmod +x chkk;
+        ./chkk -f <<parameters.kubernetes-manifest>> -r <<parameters.enable-checks>> -s <<parameters.skip-checks>> <<parameters.args>>
