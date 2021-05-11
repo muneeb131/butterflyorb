@@ -12,6 +12,4 @@ jobs:
         - butterfly-orb/scan:
               kubernetes-manifest: "kubernetes-manifest.yaml"
               chkk-access-token: $CHKK_ACCESS_TOKEN
-              args:
-                --continue-on-error
-                --hide-diff
+              continue-on-error: true
