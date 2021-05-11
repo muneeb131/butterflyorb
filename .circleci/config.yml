@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  circleci-orb: test-chk/circleci-orb@0.0.9
+  circleci-orb: muneeb131/butterflyorb@dev:beta
 
 jobs:
   build:
@@ -12,4 +12,3 @@ jobs:
         - circleci-orb/scan:
             kubernetes-manifest: "kubernetes-manifest.yaml"
             chkk-access-token: $CHKK_ACCESS_TOKEN
-            continue-on-error: true
