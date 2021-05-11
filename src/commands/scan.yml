@@ -15,10 +15,6 @@ parameters:
     description: List of checks to skip
     default: "default"
     type: string
-  continue-on-error:
-    description: Do not raise error in case a check fails
-    default: false
-    type: boolean
   args:
     description: Additional arguments to pass to Chkk
     type: string
@@ -30,4 +26,4 @@ steps:
         export CHKK_ACCESS_TOKEN=<<parameters.chkk-access-token>>;
         curl -Lo chkk https://downloads.chkk.dev/v0.0.1/chkk-linux-amd64;
         chmod +x chkk;
-        ./chkk -f <<parameters.kubernetes-manifest>> -r <<parameters.run-checks>> -s <<parameters.skip-checks>> --continue-on-error <<parameters.continue-on-error>>
+        ./chkk -f <<parameters.kubernetes-manifest>> --continue-on-error -r <<parameters.run-checks>> -s <<parameters.skip-checks>> <<parameters.args>>
