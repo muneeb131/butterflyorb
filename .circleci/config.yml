@@ -13,4 +13,5 @@ jobs:
               kubernetes-manifest: "kubernetes-manifest.yaml"
               chkk-access-token: $CHKK_ACCESS_TOKEN
               args:
-                --continue-on-error
+                - --continue-on-error
+                - --hide-diff
