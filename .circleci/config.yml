@@ -2,7 +2,8 @@ version: 2.1
 
 orbs:
   # Replace this with your own!
-  butterflyorb: muneeb131/butterflyorb@<<pipeline.parameters.dev-orb-version>>
+  # butterflyorb: muneeb131/butterflyorb@<<pipeline.parameters.dev-orb-version>>
+  butterflyorb: muneeb131/butterflyorb@dev:alpha
   orb-tools: circleci/orb-tools@10.0
   bats: circleci/bats@1.0
   shellcheck: circleci/shellcheck@2.0
@@ -32,7 +33,7 @@ jobs:
       # "greet" is a sample command packaged with this orb config.
       # This sample integration test will run as long as the greet command exists. Once you remove the greet command you should remove this line.
       # Push new changes first, before adding new tests to your config.
-      - butterflyorb/greet
+      - butterflyorb/scan
 
 workflows:
   # Prior to producing a development orb (which requires credentials) basic validation, linting, and even unit testing can be performed.
