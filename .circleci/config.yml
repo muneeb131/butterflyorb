@@ -6,7 +6,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/node:4.8.2
+      - image: cimg/base:stable
     steps:
         - checkout
         - circleci-orb/scan:
